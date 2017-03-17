@@ -27,9 +27,10 @@ LABEL Description "RISC-V GCC crosscompiler"
 ARG VERSION=ff21e26
 ARG JOBS=-j8
 
-RUN apt-get install -y autoconf automake autotools-dev curl libmpc-dev
-RUN apt-get install -y libmpfr-dev libgmp-dev gawk build-essential bison 
-RUN apt-get install -y flex texinfo gperf libtool patchutils bc zlib1g-dev
+RUN apt-get install -y \
+    autoconf automake autotools-dev curl libmpc-dev libmpfr-dev libgmp-dev \
+    gawk build-essential bison flex texinfo gperf libtool patchutils bc \
+    zlib1g-dev
 
 WORKDIR /tmp
 RUN git clone https://github.com/riscv/riscv-gnu-toolchain
